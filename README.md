@@ -5,8 +5,11 @@ I made it on 2026, March 20, just before school because I wanted to see which pa
 It is worth noting, that the constructed pie chart compares the sizes of the installed packages to the summed size of all packages, not 
 
 ## How to Run:
+Clone or download the repository.
+Change your directory to inside the repository.
 
 ```
+mkdir tmp/
 bash run.sh <SIZE>
 ```
 where <SIZE> means the minimum size of the packages to be included, in Megabytes.
