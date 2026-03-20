@@ -10,6 +10,7 @@ It is worth noting, that the constructed pie chart compares the sizes of the ins
 bash run.sh <SIZE>
 ```
 where <SIZE> means the minimum size of the packages to be included.
+The program exists with exceptions, that is fine (as of now)
 
 ## Requirements
 
@@ -20,7 +21,8 @@ see requirements.txt: python3, and matplotlib
 - [ ] Add functionality to enable / disable packages from the program
 - [ ] Figure out how to make extensible with other package managers
 - [ ] Rationalize and clean up the code
+- [ ] Add SOME error handling
 
 ## Misc.
 
-It works on my Kubuntu machine, I have no idea if it does on others.
+It works on my Kubuntu machine, I have no idea if it does on others, but it'd be nice.
