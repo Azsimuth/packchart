@@ -16,42 +16,42 @@ def normalize_snap_sizes(size_str):
         size_str = size_str.replace("K", "")
         return float(size_str) / 1000
 
-def read_dkpg():
-    dkpg_names = list()
-    dkpg_sizes = list()
+def read_dpkg():
+    dpkg_names = list()
+    dpkg_sizes = list()
 
     deleted_indices = list()
 
-    with open("dkpg_sizes.txt", "r") as f:
+    with open("./tmp/dpkg_sizes.txt", "r") as f:
         i = 0
         for line in f:
             i+=1
             sz = float(line) / 1000
             if sz > SIZE_TRESHOLD:
-                dkpg_sizes.append(float(line) / 1000)
+                dpkg_sizes.append(float(line) / 1000)
             else:
                 deleted_indices.append(i)
 
-    with open("dkpg_names.txt", "r") as f:
+    with open("./tmp/dpkg_names.txt", "r") as f:
         j = 0
         for line in f:
             j+=1
             if not (j in deleted_indices):
-                dkpg_names.append(line + " (" + str(dkpg_sizes[len(dkpg_names)]) + " MB)" )
+                dpkg_names.append(line + " (" + str(dpkg_sizes[len(dpkg_names)]) + " MB)" )
     
     print(
             "Removed: " + 
             str(len(deleted_indices)) +
-            " dkpg entries as per the sizing treshold."
+            " dpkg entries as per the sizing treshold."
             )
 
-    return (dkpg_sizes, dkpg_names)
+    return (dpkg_sizes, dpkg_names)
 
 def read_snap():
     snap_names = list()
     snap_sizes = list()
     deleted_indices = list()
-    with open("snap_sizes.txt", "r") as f:
+    with open("./tmp/snap_sizes.txt", "r") as f:
         i = 0
         for line in f:
             i+=1
@@ -61,7 +61,7 @@ def read_snap():
             else:
                 deleted_indices.append(i)
 
-    with open("snap_names.txt", "r") as f:
+    with open("./tmp/snap_names.txt", "r") as f:
         j = 0
         for line in f:
             j+=1
@@ -81,7 +81,7 @@ def read_snap():
     return (snap_sizes, snap_names)
 
 snap_sz, snap_n = read_snap()
-apt_sz, apt_n = read_dkpg()
+apt_sz, apt_n = read_dpkg()
 
 plt.pie(apt_sz + snap_sz, labels = ( apt_n + snap_n ))
 plt.show()

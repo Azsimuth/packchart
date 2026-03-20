@@ -6,10 +6,10 @@ if [ $# -eq 0 ]
     exit
 fi
 
-./dkpg.sh
-./snap.sh
+modules/dpkg.sh
+modules/snap.sh
 python3 piechart.py ${1}
-rm dkpg_names.txt
-rm dkpg_sizes.txt
-rm snap_names.txt
-rm snap_sizes.txt
+rm ./tmp/dpkg_names.txt
+rm ./tmp/dpkg_sizes.txt
+rm ./tmp/snap_names.txt
+rm ./tmp/snap_sizes.txt
