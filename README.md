@@ -1,7 +1,7 @@
 # packchart
 
 Packchart is quickly thrown together tool to visualize the appoximate sizes of installed dkpg and snap packages on the system.
-I made it on 2026, March 20, under about an hour because I wanted to see which packages where taking up what amount of space.
+I made it on 2026, March 20, just before school because I wanted to see which packages where taking up what amount of space.
 It is worth noting, that the constructed pie chart compares the sizes of the installed packages to the summed size of all packages, not 
 
 ## How to Run:
