@@ -9,7 +9,7 @@ It is worth noting, that the constructed pie chart compares the sizes of the ins
 ```
 bash run.sh <SIZE>
 ```
-where <SIZE> means the minimum size of the packages to be included.
+where <SIZE> means the minimum size of the packages to be included, in Megabytes.
 The program exists with exceptions, that is fine (as of now)
 
 ## Requirements
