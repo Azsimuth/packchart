@@ -6,6 +6,10 @@ if [ $# -eq 0 ]
     exit
 fi
 
+if ! [ -d "./tmp/" ]; then
+    mkdir "./tmp/"
+fi
+
 modules/dpkg.sh
 modules/snap.sh
 python3 piechart.py ${1}
