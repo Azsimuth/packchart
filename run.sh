@@ -10,6 +10,9 @@ if ! [ -d "./tmp/" ]; then
     mkdir "./tmp/"
 fi
 
+chmod +x modules/snap.sh
+chmod +x modules/dpkg.sh
+
 modules/dpkg.sh
 modules/snap.sh
 python3 piechart.py ${1}
