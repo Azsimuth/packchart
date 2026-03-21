@@ -9,7 +9,6 @@ Clone or download the repository.
 Change your directory to inside the repository.
 
 ```
-mkdir tmp/
 bash run.sh <SIZE>
 ```
 where <SIZE> means the minimum size of the packages to be included, in Megabytes.
