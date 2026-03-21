@@ -80,8 +80,17 @@ def read_snap():
 
     return (snap_sizes, snap_names)
 
+
 snap_sz, snap_n = read_snap()
 apt_sz, apt_n = read_dpkg()
 
-plt.pie(apt_sz + snap_sz, labels = ( apt_n + snap_n ))
+ttl_size = apt_sz + snap_sz
+
+s = 0
+for n in ttl_size:
+    s += n
+print("Total size of included packages: " + str(s) + " MB /~ " + str(round(s/1000, 2)) + " G")
+plt.pie(ttl_size, labels = ( apt_n + snap_n ))
+print("Pie chart opened in new window.")
 plt.show()
+
